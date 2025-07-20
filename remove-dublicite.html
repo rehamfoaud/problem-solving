@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remove Duplicate Numbers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: whitesmoke;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin-top: 100px;
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #03301b;
+    }
+
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container text-center">
+    <h1>Remove Duplicate Numbers</h1>
+    <p class="text-muted">Enter numbers separated by commas (e.g. 1,2,2,3,4)</p>
+
+    <input type="text" id="numbersInput" class="form-control mb-3" placeholder="Enter numbers here...">
+    <button onclick="removeDuplicates()" class="btn btn-success">Remove Duplicates</button>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function removeDuplicates() {
+      const input = document.getElementById('numbersInput').value;
+      const numberArray = input.split(',').map(num => num.trim());
+      const uniqueNumbers = [...new Set(numberArray)];
+      document.getElementById('result').innerText = `Unique Numbers: ${uniqueNumbers.join(', ')}`;
+    }
+    
+  </script>
+
+</body>
+</html>

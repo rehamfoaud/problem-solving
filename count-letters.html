@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Count Letters</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin-top: 80px;
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #dc3545;
+    }
+
+    .btn-custom {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn-custom:hover {
+      background-color: #c82333;
+    }
+
+    #result {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #343a40;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container text-center">
+    <h1>Count Letters in a String</h1>
+    <p class="text-muted">This page contains a simple JavaScript function to count the number of letters in a given string.</p>
+
+    <div class="mb-3">
+      <input type="text" id="textInptut" class="form-control" placeholder="Type something here...">
+    </div>
+
+    <button class="btn btn-custom" onclick="countLetters(document.getElementById('textInptut').value)">Count Letters</button>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function countLetters(str) {
+      if (typeof str !== 'string') {
+        document.getElementById('result').innerText = 'Please enter a valid string.';
+        return;
+      }
+      const letterCount = str.replace(/[^a-zA-Z]/g, '').length;
+      document.getElementById('result').innerText = `Number of letters: ${letterCount}`;
+    }
+  </script>
+</body>
+</html>
